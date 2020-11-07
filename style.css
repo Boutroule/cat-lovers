@@ -1,5 +1,6 @@
 body {
   font-family: 'Satisfy', cursive;
+  text-align: center;
 }
 
 .title {
@@ -14,11 +15,42 @@ body {
   width: 60%;
   border-radius: 10px;
   border: dotted #250c11;
+  display: inline-block;
   text-align: center;
    animation: bounce 1s infinite, effet 2s infinite;
 }
 
-@keyframes courir {
+.moods ul {
+  padding: 0;
+
+
+}
+
+.moods li {
+  list-style: none;
+  display: inline-block;
+  border: 2px solid black;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(66, 94, 68);
+}
+.moods li:hover{
+  opacity: 0.6;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes bounce {
   0% {
     transform: translateY(0);
   }
