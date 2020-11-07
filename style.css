@@ -1,0 +1,46 @@
+body {
+  font-family: 'Satisfy', cursive;
+}
+
+.title {
+  font-family: 'Henny Penny', cursive;
+  text-align: center;
+  text-shadow: -2px -9px 2px #69608b, 3px 15px 2px #e91ea1;
+  color: #00ffade0;
+}
+.main {
+  background-color: #813ab7e0;
+  padding:10px;
+  width: 60%;
+  border-radius: 10px;
+  border: dotted #250c11;
+  text-align: center;
+   animation: bounce 1s infinite, effet 2s infinite;
+}
+
+@keyframes courir {
+  0% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-15px);
+  }
+
+  80% {
+    transform: translateY(-7.5px);
+  }
+}
+@keyframes effet {
+  0% {
+    background-color: #813ab7e0;
+  }
+
+  40% {
+    background-color: rgb(204, 21, 180);
+  }
+
+  80% {
+    background-color: rgb(70, 222, 32);
+  }
+}

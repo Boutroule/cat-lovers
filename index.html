@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Satisfy&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1 class="title">Cat lover</h1>
+
+    <div class="main">
+      <h3>Select your mood</h3>
+      <ul>
+        <li onclick="gifMe('crazy')">Fou</li>
+        <li onclick="gifMe('love')">Amour</li>
+        <li onclick="gifMe('Evil')">Mechant</li>
+        <li onclick="gifMe('happy')">Joyeux</li>
+
+      </ul>
+
+    </div>
+<div class="moods">
+
+  <img src="#" id="gif-me">
+
+</div>
+
+    <script type="text/javascript">
+        const gifMe = async (mood) => {
+            const url = 'https://api.giphy.com/v1/gifs/search?api_key=l8Gk4WWlWQL71mNpZZ4MVD3W9huVTHf9&q=cat+' + mood;
+            const resp = await fetch(url);
+            const {data} = await resp.json();
+            const randomId = Math.floor(Math.random() * 50);
+            const {url:imgUrl} = data[randomId].images.downsized_large;
+            document.getElementById('gif-me').src = imgUrl;
+          }
+    </script>
+  </body>
+</html>
