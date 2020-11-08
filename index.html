@@ -36,15 +36,20 @@
     <div>
       <ul>
         <li onclick="paxabay('crazy')">Fou</li>
+        <li onclick="paxabay('love')">Amour</li>
+        <li onclick="paxabay('Evil')">Mechant</li>
+        <li onclick="paxabay('happy')">Joyeux</li>
+        <li onclick="paxabay('smart')">Génie</li>
       </ul>
     </div>
 
 
 <img src="#" id="paxa-bay">
+<img src="#" id="">
 
 <script type="text/javascript">
     const paxabay = async (mood) => {
-        const url = 'https://pixabay.com/fr/images/search/cat/' + mood;
+        const url = 'https://pixabay.com/fr/images/search/cat+' + mood;
         const resp = await fetch(url);
         const {data} = await resp.json();
         const randomId = Math.floor(Math.random() * 50);
