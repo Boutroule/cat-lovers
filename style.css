@@ -1,6 +1,12 @@
-body {
+html {
   font-family: 'Satisfy', cursive;
   text-align: center;
+  width: 100%;
+  background-image: url("https://www.wallpaperbetter.com/wallpaper/173/834/552/cat-grumpy-cat-the-little-mermaid-disney-humor-drawing-720P-wallpaper-middle-size.jpg");
+  background-size: cover;
+  height: 100vh;
+
+
 }
 
 .title {
