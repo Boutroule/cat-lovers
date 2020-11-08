@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="./style.css">
+
   </head>
   <body>
     <h1 class="title">Cat lover</h1>
 
     <div class="main">
-      <h3>Select your mood</h3>
+      <h3>Select your gify mood !</h3>
 
 
     </div>
@@ -25,9 +26,32 @@
   </ul>
 
 
-  </div>
+</div>
 
-<img src="#" id="gif-me">
+
+<div class="paxa-bay">
+  <h3>Select your pic mood !</h3>
+
+</div>
+    <div>
+      <ul>
+        <li onclick="paxabay('crazy')">Fou</li>
+      </ul>
+    </div>
+
+
+<img src="#" id="paxa-bay">
+
+<script type="text/javascript">
+    const paxabay = async (mood) => {
+        const url = 'https://pixabay.com/fr/images/search/cat/' + mood;
+        const resp = await fetch(url);
+        const {data} = await resp.json();
+        const randomId = Math.floor(Math.random() * 50);
+        const {url:imgUrl} = data[randomId].images.downsized_large;
+        document.getElementById('paxa-bay').src = imgUrl;
+      }
+</script>
 
     <script type="text/javascript">
         const gifMe = async (mood) => {
