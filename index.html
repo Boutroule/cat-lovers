@@ -1,72 +1,71 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Satisfy&display=swap" rel="stylesheet">
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="./style.css">
 
-  </head>
-  <body>
-    <h1 class="title">Cat lover</h1>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Satisfy&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="./style.css">
 
-    <div class="main">
-      <h3>Select your gify mood !</h3>
+</head>
 
-
-    </div>
-<div class="moods">
-
-  <ul>
-    <li onclick="gifMe('crazy')">Fou</li>
-    <li onclick="gifMe('love')">Amour</li>
-    <li onclick="gifMe('Evil')">Mechant</li>
-    <li onclick="gifMe('happy')">Joyeux</li>
-    <li onclick="gifMe('smart')">Génie</li>
-  </ul>
+<body>
+  <h1 class="title">Cat lover</h1>
 
 
-</div>
+  <div class="moods">
+    <h3 class="titre-1">Select your gify mood !</h3>
+    <ul>
+      <li onclick="gifMe('crazy')">Fou</li>
+      <li onclick="gifMe('love')">Amour</li>
+      <li onclick="gifMe('Evil')">Mechant</li>
+      <li onclick="gifMe('happy')">Joyeux</li>
+      <li onclick="gifMe('smart')">Génie</li>
+    </ul>
 
 
-<div class="paxa-bay">
-  <h3>Select your pic mood !</h3>
-
-</div>
-    <div>
-      <ul>
-        <li onclick="paxabay('crazy')">Fou</li>
-        <li onclick="paxabay('love')">Amour</li>
-        <li onclick="paxabay('Evil')">Mechant</li>
-        <li onclick="paxabay('happy')">Joyeux</li>
-        <li onclick="paxabay('smart')">Génie</li>
-      </ul>
-    </div>
+  </div>
 
 
-<img src="#" id="paxa-bay">
-<img src="#" id="">
+  <div class="moods">
+    <h3 class="titre-2">Select your pic mood !</h3>
 
-<script type="text/javascript">
-    const paxabay = async (mood) => {
-        const url = 'https://pixabay.com/fr/images/search/cat+' + mood;
-        const resp = await fetch(url);
-        const {data} = await resp.json();
-        const randomId = Math.floor(Math.random() * 50);
-        const {url:imgUrl} = data[randomId].images.downsized_large;
-        document.getElementById('paxa-bay').src = imgUrl;
-      }
-</script>
+    <ul>
+      <li onclick="paxabay('crazy')">Fou</li>
+      <li onclick="paxabay('love')">Amour</li>
+      <li onclick="paxabay('Evil')">Mechant</li>
+      <li onclick="paxabay('happy')">Joyeux</li>
+      <li onclick="paxabay('smart')">Génie</li>
+    </ul>
 
-    <script type="text/javascript">
-        const gifMe = async (mood) => {
-            const url = 'https://api.giphy.com/v1/gifs/search?api_key=l8Gk4WWlWQL71mNpZZ4MVD3W9huVTHf9&q=cat+' + mood;
-            const resp = await fetch(url);
-            const {data} = await resp.json();
-            const randomId = Math.floor(Math.random() * 50);
-            const {url:imgUrl} = data[randomId].images.downsized_large;
-            document.getElementById('gif-me').src = imgUrl;
-          }
-    </script>
-  </body>
+  </div>
+
+
+
+  <img src="https://source.unsplash.com/1600x900/?cat,love" id="gif-me">
+
+
+  <script type="text/javascript">
+    const paxabay = (mood) => {
+      const url = 'https://source.unsplash.com/1600x900/?cat,' + mood;
+      document.getElementById('gif-me').src = url;
+    }
+  </script>
+
+  <script type="text/javascript">
+    const gifMe = async (mood) => {
+      const url = 'https://api.giphy.com/v1/gifs/search?api_key=l8Gk4WWlWQL71mNpZZ4MVD3W9huVTHf9&q=cat+' + mood;
+      const resp = await fetch(url);
+      const {
+        data
+      } = await resp.json();
+      const randomId = Math.floor(Math.random() * 50);
+      const {
+        url: imgUrl
+      } = data[randomId].images.downsized_large;
+      document.getElementById('gif-me').src = imgUrl;
+    }
+  </script>
+</body>
+
 </html>
